@@ -1,6 +1,5 @@
 package com.digi.addressbook;
 
-import com.digi.addressbook.UpdateContact;
 import com.digi.contacts.Contact;
 
 import java.util.HashMap;
@@ -8,35 +7,40 @@ import java.util.Scanner;
 
 
 public class AddressBook {
-    Contact contact = new Contact();
     HashMap<String,Contact> map = new HashMap<>();
 
     public void addContact() {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your contact Details :  ");
+        String choice ="y";
+        do{
+            System.out.println("Enter you name you want ");
+            String firstName=scanner.next();
 
-        System.out.println("Enter you First Name : ");
-        String firstName = scanner.next();
-        contact.setFirstName(firstName);
+            if(!map.containsKey(firstName)){
+                Contact contact = new Contact();
+                contact.setFirstName(firstName);
+                InsertDetails(scanner,contact);
+                map.put(firstName,contact);
+            }
+            else{
+                System.out.println("User exist ");
 
+            }
 
-        if(!map.containsKey(firstName)){
-            InsertDetails(scanner,contact);
-            map.put(firstName,contact);
-        }
-        else{
-            System.out.println("Name registered :::::::::::::");
-        }
+            System.out.println("Do you wish to add more contacts ? ");
+            choice=scanner.next();
+            choice =choice.toLowerCase();
+
+        }while(choice.equals("y"));
 
     }
 
-
     public void updateContact(){
+
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter your name : ");
         String name= scanner.next();
-
         if(map.containsKey(name)){
             UpdateContact updateContact= new UpdateContact();
             System.out.println("\n What you want to update ?\n");
@@ -49,19 +53,32 @@ public class AddressBook {
                 case "4" -> updateContact.changeState(map,scanner,name);
                 case "5" -> updateContact.changeZip(map,scanner,name);
                 case "6" -> updateContact.changeEmail(map,scanner,name);
+                default -> System.out.println("Invalid choice.");
             }
 
         }
         else{
-            System.out.println("User Not available,");
+            System.out.println("User Not available");
         }
     }
 
+    public void deleteContact() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name you want to delete : ");
+        String name = scanner.next();
 
+        if(map.containsKey(name)){
+            Contact contact = map.get(name);
+            contact=null;
+            map.remove(name);
+        }
+        else{
+            System.out.println("User Not available");
+        }
 
+    }
 
     private void displayUpdateItems() {
-        System.out.println(" What you want to change ?\n");
         System.out.println("Press 1 : Update first Name and Last Name");
         System.out.println("Press 2 : Update address ");
         System.out.println("Press 3 : Update city ");
