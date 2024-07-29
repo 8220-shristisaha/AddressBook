@@ -59,6 +59,21 @@ public class AddressBook {
             System.out.println("User Not available");
         }
     }
+    public void deleteContact() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name you want to delete : ");
+        String name = scanner.next();
+
+        if(map.containsKey(name)){
+            Contact contact = map.get(name);
+            contact=null;
+            map.remove(name);
+        }
+        else{
+            System.out.println("User Not available");
+        }
+
+    }
 
 
 

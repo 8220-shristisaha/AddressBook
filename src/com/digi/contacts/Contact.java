@@ -1,5 +1,3 @@
-package com.digi.contacts;
-
 public class Contact{
     private String firstName;
     private String lastName;
