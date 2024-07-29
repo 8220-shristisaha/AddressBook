@@ -13,8 +13,6 @@ public class AddressBookMain {
             System.out.println(" Press 3 : Delete contact details\n");
             System.out.println("Enter your choice : ");
             String ch = scanner.next();
-
-
             switch(ch){
                 case "1" -> addressBook.addContact();
                 case "2" ->  addressBook.updateContact();

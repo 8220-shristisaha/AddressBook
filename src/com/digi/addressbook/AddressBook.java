@@ -75,8 +75,6 @@ public class AddressBook {
 
     }
 
-
-
     private void displayUpdateItems() {
         System.out.println("Press 1 : Update first Name and Last Name");
         System.out.println("Press 2 : Update address ");
