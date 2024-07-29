@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddressBookMain {
@@ -23,14 +24,11 @@ public class AddressBookMain {
                 case "3" -> addressBook.deleteContact();
                 default -> System.out.println("Invalid choice");
             }
-            System.out.println("Do you wish to continue (Y/N) ?");
+            System.out.println("Do you wish to continue to add/update/delete in Address Book(Y/N) ?");
             choice=scanner.next();
             choice=choice.toLowerCase();
         }while(choice.equals("y"));
-
         booklet.put(book,addressBook);
-
-
     }
 
     private static void display() {
