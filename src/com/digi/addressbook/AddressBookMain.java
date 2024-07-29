@@ -1,9 +1,8 @@
-package com.digi.addressbook;
-
 import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
+
         Scanner scanner= new Scanner(System.in);
         display();
         String choice="y";
@@ -26,6 +25,8 @@ public class AddressBookMain {
             choice=scanner.next();
             choice=choice.toLowerCase();
         }while(choice.equals("y"));
+
+
     }
 
     private static void display() {

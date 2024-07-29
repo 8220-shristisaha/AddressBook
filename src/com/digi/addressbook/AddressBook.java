@@ -1,12 +1,10 @@
-package com.digi.addressbook;
-
-import com.digi.contacts.Contact;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
 
 public class AddressBook {
+
     HashMap<String,Contact> map = new HashMap<>();
 
     public void addContact() {
@@ -62,21 +60,7 @@ public class AddressBook {
         }
     }
 
-    public void deleteContact() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the name you want to delete : ");
-        String name = scanner.next();
 
-        if(map.containsKey(name)){
-            Contact contact = map.get(name);
-            contact=null;
-            map.remove(name);
-        }
-        else{
-            System.out.println("User Not available");
-        }
-
-    }
 
     private void displayUpdateItems() {
         System.out.println("Press 1 : Update first Name and Last Name");
@@ -119,4 +103,7 @@ public class AddressBook {
         String email = scanner.next();
         contact.setEmail(email);
     }
+
+
+
 }

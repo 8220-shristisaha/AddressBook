@@ -1,7 +1,3 @@
-package com.digi.addressbook;
-
-import com.digi.contacts.Contact;
-
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -16,8 +12,8 @@ public class UpdateContact {
 
         System.out.println("Enter your new Last Name ");
         String lastName= scanner.next();
-
-        newContact.setFirstName(lastName);
+        newContact.setLastName(lastName);
+        map.remove(oldName);
         map.put(firstName,newContact);
 
 
