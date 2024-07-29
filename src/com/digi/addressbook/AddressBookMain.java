@@ -6,6 +6,10 @@ public class AddressBookMain {
         Scanner scanner= new Scanner(System.in);
         display();
         String choice="y";
+        HashMap<String,AddressBook> booklet= new HashMap<>();
+        System.out.println(" Create a Book ");
+        System.out.println("Enter the name of your Book");
+        String book = scanner.next();
         AddressBook addressBook = new AddressBook();
         do{
             System.out.println(" Press 1 : Add contact details");
@@ -23,6 +27,8 @@ public class AddressBookMain {
             choice=scanner.next();
             choice=choice.toLowerCase();
         }while(choice.equals("y"));
+
+        booklet.put(book,addressBook);
 
 
     }

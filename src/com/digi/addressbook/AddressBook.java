@@ -72,7 +72,6 @@ public class AddressBook {
         else{
             System.out.println("User Not available");
         }
-
     }
 
     private void displayUpdateItems() {

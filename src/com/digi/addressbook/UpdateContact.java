@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class UpdateContact {
     public void changeUserName(HashMap<String, Contact> map, Scanner scanner, String oldName) {
-
         Contact newContact=map.get(oldName);
         System.out.println("Enter your new First Name ");
         String firstName= scanner.next();
